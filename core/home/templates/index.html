@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    
+    <style>
+        /* Modern Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 16px;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        table th, table td {
+            padding: 12px 15px;
+            border: 1px solid #dddddd;
+        }
+
+        table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        /* Zebra striping for alternating rows */
+        table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        /* Highlight row on hover */
+        table tbody tr:hover {
+            background-color: #f1f1f1;
+            cursor: pointer;
+        }
+
+        /* Basic page layout styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #fafafa;
+            color: #333;
+        }
+    </style>
+    
+    {% comment %} <link rel="stylesheet" href="style.css"> {% endcomment %}
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to My Website</h1>
+    </header>
+
+    {{people}}
+    <table>
+        <thead>
+            <tr>
+                <th>S.No.</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for p in people%}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.age}}</td>
+            </tr>
+            {%endfor%}
+            {% comment %} <tr>
+                <td>Row 2, Cell 1</td>
+                <td>Row 2, Cell 2</td>
+                <td>Row 2, Cell 3</td>
+            </tr> {% endcomment %}
+        </tbody>
+    </table>
+
+    <main>
+        <p>This is a starter template for your index.html file.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Website</p>
+    </footer>
+
+    <!-- Link your external JavaScript file here -->
+    {% comment %} <script src="script.js"></script> {% endcomment %}
+</body>
+</html>
