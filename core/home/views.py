@@ -13,14 +13,15 @@ def home(request):
     ]
     
     line="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi diam."
-    return render(request,"index.html",context={'people':peoples,'text':line})
+    return render(request,"index.html",context={'people':peoples,'text':line,'page':'home'})
 
 def success_page(request):
     print('*'*10)
     return HttpResponse("<h1>Hi this is success page</h1>")
 
 def about(request):
-    return render(request,"about.html")
+    context={'page':'about'}
+    return render(request,"about.html",context)
 
 def contact(request):
     return render(request,"contact.html")
